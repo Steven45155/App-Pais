@@ -16,7 +16,8 @@ export class ByRegionPageComponent implements OnInit{
   Region:Country[]=[]
   public regions:Region[]=['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
   public selectedRegion?: Region;
-  public placeholder: string="Buscar por region"
+  public placeholder: string="Buscar por region";
+  public isLoading:boolean=false;
 
   ngOnInit(): void {
     this.selectedRegion=this.Service.cacheStore.byRegion.Region;
@@ -24,9 +25,11 @@ export class ByRegionPageComponent implements OnInit{
   }
 
   searchByRegion( valor:Region ){
+    this.isLoading=true;
     this.selectedRegion= valor;
     this.Service.searchRegion( valor )
-    .subscribe( region=> this.Region = region)
+    .subscribe( region=> {this.Region = region
+      this.isLoading=false})
   }
 
 }
