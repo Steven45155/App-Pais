@@ -25,10 +25,6 @@ import { ByCountryPageComponent } from './pages/by-country-page/by-country-page.
       path: 'by/:id',
       component: CountryPageComponent
     },
-    {
-      path: '**',
-      redirectTo: 'by-capital'
-    }
   ]
 
 @NgModule({
