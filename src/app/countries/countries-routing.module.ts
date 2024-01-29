@@ -10,7 +10,7 @@ import { ByCountryPageComponent } from './pages/by-country-page/by-country-page.
 
   const routes: Routes=[
     {
-      path: '',
+      path: 'by-capital',
       component: ByCapitalPageComponent
     },
     {
@@ -27,7 +27,7 @@ import { ByCountryPageComponent } from './pages/by-country-page/by-country-page.
     },
     {
       path: '**',
-      redirectTo: ''
+      redirectTo: 'by-capital'
     }
   ]
 
